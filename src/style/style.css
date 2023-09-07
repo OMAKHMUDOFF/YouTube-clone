@@ -1,0 +1,307 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #fff;
+}
+
+:root {
+  --index: calc(1vh + 1vw);
+}
+
+body {
+  background-color: #0f0f0f;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 calc(var(--index) * 0.7);
+  background: #0f0f0f;
+}
+
+nav .logo-menu {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--index) * 0.9);
+  padding: 14px 14px;
+}
+
+nav .icon-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 25px;
+}
+
+nav .icon-name h3 {
+  font-size: 11px;
+  font-weight: 900;
+  transform: scaleY(2) scaleX(1.2);
+}
+
+nav .logo-menu .menu button {
+  background: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+nav :where(.searchWin, .search-input, .setting-profile) {
+  display: flex;
+  align-items: center;
+}
+
+nav .search-input {
+  gap: 10px;
+}
+
+nav .searchWin {
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid hsl(0, 0%, 18.82%);
+  border-radius: 40px;
+  padding: 0 0 0 13px;
+}
+
+nav .searchWin input {
+  width: 500px;
+  background: none;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+nav .searchWin input::placeholder {
+  font-weight: 430;
+}
+
+nav .searchWin .button-glass button {
+  border: 1px solid hsl(0, 0%, 18.82%);
+  background-color: hsla(0, 0%, 100%, 0.08);
+  border-radius: 0 40px 40px 0;
+  cursor: pointer;
+  height: 35px;
+  width: 64px;
+  font-size: 17px;
+}
+
+nav .searchWin .button-glass button i {
+  filter: invert(50%);
+}
+
+nav .microphone button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 17px;
+  font-weight: lighter;
+  background-color: hsla(0, 0%, 100%, 0.08);
+}
+
+nav .input-keyboard i {
+  filter: invert(50%);
+}
+
+nav .setting-profile {
+  gap: 5px;
+}
+
+nav .setting-profile .profile button:hover {
+  background-color: #3ea5ff3b;
+}
+
+:is(nav .setting-profile, .sidebar) .profile button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px 20px 7px 10px;
+  border-radius: 40px;
+  color: #3ea6ff;
+  font-weight: 450;
+  font-size: 15px;
+}
+
+:is(nav, .sidebar) .profile button i {
+  color: #3ea6ff;
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+nav .hover-setting button {
+  background: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 15px;
+}
+
+.sidebar {
+  max-height: 95vh;
+  width: 240px;
+  position: fixed;
+  left: 0;
+  top: 50px;
+  overflow-y: auto;
+  background: #0f0f0f;
+}
+
+.sidebar :where(.links) {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sidebar :is(.links, .navigators, .others) ul li a {
+  padding: 0 10px;
+  width: 204px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 15px;
+}
+
+.sidebar .links li img {
+  width: 17px;
+  filter: invert(100%);
+}
+
+.others li img.kids {
+  width: 30px;
+}
+
+.sidebar :is(.navigators) li img {
+  width: 20px;
+  filter: invert(100%);
+}
+
+.sidebar .links li .subs {
+  width: 20px;
+}
+.sidebar .links li .lib {
+  width: 20px;
+}
+
+.sidebar .links ul:first-child {
+  margin-top: 20px;
+}
+
+.sidebar :is(.links, .navigators, .others) ul {
+  margin-top: 10px;
+  padding: 0 20px 17px;
+  border-bottom: 1px solid #cccccc41;
+}
+
+.sidebar :is(.links, .navigators, .others) .active {
+  border-radius: 10px;
+  background-color: #cccccc1f;
+}
+
+.Main-page {
+  margin: 126px 0 0 270px;
+}
+
+.sidebar :is(.links, .navigators, .others) a:hover {
+  border-radius: 10px;
+
+  background-color: #cccccc1f;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  margin-left: 260px;
+  background: #0f0f0f;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 12px;
+}
+
+header button {
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 9px;
+  background-color: #ffffff19;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+header button:hover {
+  background-color: #fff;
+  color: #0f0f0f;
+}
+
+.sign-in {
+  padding: 13px 35px 20px;
+  border-bottom: 1px solid #cccccc41;
+}
+
+.sign-in .subtitle p {
+  line-height: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+:is(.navigators, .others) .title {
+  padding: 17px 30px 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+  background: none;
+  width: 7px;
+}
+
+.sidebar:hover::-webkit-scrollbar {
+  display: block;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 10px;
+}
