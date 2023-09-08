@@ -1,3 +1,3 @@
 export function News() {
-  return <></>;
+  return <><h1>news</h1></>;
 }

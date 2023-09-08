@@ -13,15 +13,15 @@ import fashion from "../img/fashion.png";
 
 import circleplus from "../img/add-circle-outline.svg";
 import kids from "../img/youtube-kds.png";
-export function Sidebar() {
+export function Sidebar({ open }) {
   return (
     <>
-      <div className="sidebar">
+      <div className={open ? "sidebar open" : "sidebar"}>
         <div className="links">
           <ul>
             <li>
               <NavLink to={"/"}>
-                <i class="fa-solid fa-house"></i>Главная
+                <i className="fa-solid fa-house"></i>Главная
               </NavLink>
             </li>
             <li>
@@ -96,12 +96,12 @@ export function Sidebar() {
             </li>
             <li>
               <NavLink to={"/news"}>
-                <i class="fa-regular fa-newspaper"></i>Новости
+                <i className="fa-regular fa-newspaper"></i>Новости
               </NavLink>
             </li>
             <li>
               <NavLink to={"/sport"}>
-                <i class="fa-solid fa-trophy"></i>
+                <i className="fa-solid fa-trophy"></i>
                 Спорт
               </NavLink>
             </li>
@@ -140,24 +140,25 @@ export function Sidebar() {
           <ul>
             <li>
               <NavLink to={"/settings"}>
-                <i class="fa-solid fa-gear"></i>
+                <i className="fa-solid fa-gear"></i>
                 Настройки
               </NavLink>
             </li>
             <li>
               <NavLink to={"/laments"}>
-                <i class="fa-regular fa-flag"></i>
+                <i className="fa-regular fa-flag"></i>
                 Жалобы
               </NavLink>
             </li>
             <li>
               <NavLink to={"/ref"}>
-                <i class="fa-regular fa-circle-question"></i>Справка
+                <i className="fa-regular fa-circle-question"></i>Справка
               </NavLink>
             </li>
             <li>
               <NavLink to={"/recall"}>
-                <i class="fa-solid fa-triangle-exclamation"></i>Отправить отзыв
+                <i className="fa-solid fa-triangle-exclamation"></i>Отправить
+                отзыв
               </NavLink>
             </li>
           </ul>

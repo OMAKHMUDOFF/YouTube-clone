@@ -1,20 +1,24 @@
-export function Nav() {
+import { NavLink } from "react-router-dom";
+
+export function Nav({ clickOpen }) {
   return (
     <>
       <nav>
         <div className="logo-menu">
           <div className="menu">
-            <button>
+            <button onClick={clickOpen}>
               <i className="fa-solid fa-bars"></i>
             </button>
           </div>
-          <div className="icon-name">
-            <i
-              className="fa-brands fa-youtube"
-              style={{ color: "#ff0000" }}
-            ></i>
-            <h3>YouTube</h3>
-          </div>
+          <NavLink to={"/"}>
+            <div className="icon-name">
+              <i
+                className="fa-brands fa-youtube"
+                style={{ color: "#ff0000" }}
+              ></i>
+              <h3>YouTube</h3>
+            </div>
+          </NavLink>
         </div>
         <div className="search-input">
           <div className="searchWin">

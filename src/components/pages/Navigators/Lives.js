@@ -1,3 +1,7 @@
-export function Live(){
-  return(<></>)
+export function Live() {
+  return (
+    <>
+      <h1>live</h1>
+    </>
+  );
 }
