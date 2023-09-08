@@ -17,7 +17,7 @@ export function Main({ videos, setvid }) {
               </div>
               <div className="profile-photo">
                 <div className="flex-title">
-                  <img src={elem.profile} alt="profile photo" />
+                  <img src={elem.profile} alt="profile img" />
                   <div className="video-title">
                     <h4>{elem.title}</h4>
                   </div>
