@@ -356,17 +356,36 @@ export default function Rout() {
     setIframe([...iframe, obj]);
   }
 
+  let [history, setHistory] = useState([]);
+
+  function inHistory(obj) {
+    if (history.filter((i) => i.id === obj.id).length === 0) {
+      setHistory([obj, ...history]);
+    }
+  }
 
   return (
     <Routes>
       <Route
         path="/"
-        element={<Main videos={videos} setVideo={setVideo} setvid={setvid} />}
+        element={
+          <Main
+            videos={videos}
+            setVideo={setVideo}
+            setvid={setvid}
+            inHistory={inHistory}
+          />
+        }
       />
       <Route path="/shorts" element={<Shorts />} />
       <Route path="/subscribes" element={<Subs />} />
       <Route path="/library" element={<Lib />} />
-      <Route path="/history" element={<History />} />
+      <Route
+        path="/history"
+        element={
+          <History history={history} setHistory={setHistory} setvid={setvid} />
+        }
+      />
       <Route path="/trending" element={<Trending />} />
       <Route path="/music" element={<Music />} />
       <Route path="/live" element={<Live />} />
@@ -377,10 +396,7 @@ export default function Rout() {
       <Route path="/educate" element={<Educate />} />
       <Route path="/fashion" element={<Fashion />} />
       <Route path="/catalog" element={<Catalog />} />
-      <Route
-        path={`/iframe`}
-        element={<Iframe iframe={iframe} />}
-      />
+      <Route path={`/iframe`} element={<Iframe iframe={iframe} />} />
     </Routes>
   );
 }

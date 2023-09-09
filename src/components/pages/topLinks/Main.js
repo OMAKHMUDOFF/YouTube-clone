@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export function Main({ videos, setvid }) {
+export function Main({ videos, setvid, inHistory }) {
   return (
     <div className="Main-page">
       <div className="videoCards">
@@ -10,7 +10,9 @@ export function Main({ videos, setvid }) {
               to={`/iframe`}
               className="videoCard"
               key={i}
-              onClick={() => setvid(elem)}
+              onClick={() => {
+                setvid(elem); inHistory(elem);
+              }}
             >
               <div className="preview">
                 <img src={elem.img} alt="video preview" />
