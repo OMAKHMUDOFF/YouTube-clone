@@ -353,6 +353,7 @@ export default function Rout() {
   let [iframe, setIframe] = useState([]);
 
   function setvid(obj) {
+    setIframe((iframe = []));
     setIframe([...iframe, obj]);
   }
 
