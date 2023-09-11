@@ -353,9 +353,12 @@ export default function Rout() {
 
   let [iframe, setIframe] = useState([]);
 
+  let [iframeOpen, setIframeOpen] = useState(false);
+
   function setvid(obj) {
     setIframe((iframe = []));
     setIframe([...iframe, obj]);
+    setIframeOpen(!iframeOpen);
   }
 
   let [history, setHistory] = useState([]);
@@ -401,7 +404,18 @@ export default function Rout() {
       <Route path="/educate" element={<Educate />} />
       <Route path="/fashion" element={<Fashion />} />
       <Route path="/catalog" element={<Catalog />} />
-      <Route path={`/iframe`} element={<Iframe iframe={iframe} />} />
+      <Route
+        path={`/iframe`}
+        element={
+          <Iframe
+            iframe={iframe}
+            videos={videos}
+            setvid={setvid}
+            inHistory={inHistory}
+            iframeOpen={iframeOpen}
+          />
+        }
+      />
     </Routes>
   );
 }

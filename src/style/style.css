@@ -131,6 +131,10 @@ nav .microphone button {
   background-color: hsla(0, 0%, 100%, 0.08);
 }
 
+nav .input-keyboard {
+  display: flex;
+  align-items: center;
+}
 nav .input-keyboard i {
   filter: invert(50%);
 }
@@ -402,7 +406,6 @@ html::-webkit-scrollbar {
 }
 
 .historyCards {
-  width: 42vw;
   border-top: 1px solid #cccccc3c;
   padding-top: 20px;
   display: flex;
@@ -481,6 +484,58 @@ html::-webkit-scrollbar {
   filter: invert(100%);
 }
 
+.videoContain {
+  display: flex;
+}
+
+.recomendations {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.recomendation {
+  display: none;
+}
+
+.videoContain .recomendation {
+  display: block;
+}
+
+.videoContain .recomendation img {
+  border-radius: 10px;
+  width: 150px;
+}
+
+.videoContain .recomendation a {
+  display: flex;
+  gap: 5px;
+}
+
+.videoContain .recomendation .video-title h6 {
+  font-size: 10px;
+}
+
+.videoContain .recomendation .video-title .author p {
+  color: gray;
+  font-size: 10px;
+}
+
+.videoContain.sidebar {
+  display: none;
+}
+
+.videoContain .author-setting {
+  display: flex;
+  align-items: center;
+ gap: 17px;
+}
+
+.videoContain .author-setting img {
+  border-radius: 50%;
+}
+
 @media (max-width: 1901px) {
   .videoCards {
     grid-template-columns: repeat(4, calc(100% / 4 - 20px));
@@ -550,7 +605,7 @@ html::-webkit-scrollbar {
     left: 76px;
   }
 
-  .sidebar.open :where(.navigators, .others) {
+  .sidebar.open :where(.navigators, .others, .sign-in) {
     display: block;
   }
 
@@ -588,5 +643,89 @@ html::-webkit-scrollbar {
 
   .published p {
     transform: translate(0, 2px);
+  }
+}
+
+@media (max-width: 915px) {
+  .videoContain {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .videoContain iframe {
+    width: 100vw;
+  }
+
+  .videoContain .recomendation a {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .videoContain .recomendation img {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .videoContain .recomendation .video-title h6 {
+    font-size: 20px;
+  }
+
+  .videoContain .recomendation .video-title .author p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .videoCards {
+    grid-template-columns: repeat(1, calc(100% / 1));
+  }
+
+  .sidebar {
+    transform: translate(-100%);
+  }
+
+  .sidebar :where(.navigators, .others) {
+    display: block;
+  }
+
+  .sidebar {
+    width: 240px;
+  }
+
+  .sidebar :where(.links) ul li a {
+    flex-direction: row;
+  }
+
+  .sidebar :is(.links) ul li a {
+    width: 204px;
+    height: 40px;
+    font-size: 15px;
+    gap: 30px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sidebar :is(.links) ul {
+    padding: 0 20px 17px;
+  }
+
+  .sidebar.open {
+    transform: translate(0);
+  }
+
+  header {
+    left: 0;
+  }
+
+  .middle {
+    margin: 140px 10px 0;
+  }
+
+  .setting-profile {
+    display: none;
+  }
+
+  nav {
+    padding: 0 5px 0 5px;
   }
 }

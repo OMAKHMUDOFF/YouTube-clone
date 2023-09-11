@@ -1,7 +1,9 @@
-export function Iframe({ iframe }) {
+import { NavLink } from "react-router-dom";
+
+export function Iframe({ iframe, videos, setvid, inHistory, iframeOpen }) {
   return (
     <>
-      <div className="videoContain">
+      <div className={iframeOpen ? "videoContain" : ""}>
         {iframe.map((item, i) => {
           return (
             <div className="video" key={i}>
@@ -23,11 +25,34 @@ export function Iframe({ iframe }) {
                 <div className="author-video">
                   <h4>{item.author}</h4>
                 </div>
-                
               </div>
             </div>
           );
         })}
+
+        <div className="recomendations">
+          {videos.map((elem, i) => {
+            return (
+              <div className="recomendation" key={i}>
+                <NavLink
+                  to={"/iframe"}
+                  onClick={() => {
+                    setvid(elem);
+                    inHistory(elem);
+                  }}
+                >
+                  <img src={elem.img} alt="video preview" />
+                  <div className="video-title">
+                    <h6>{elem.title}</h6>
+                    <div className="author">
+                      <p>{elem.author}</p>
+                    </div>
+                  </div>
+                </NavLink>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
