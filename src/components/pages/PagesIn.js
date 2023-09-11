@@ -48,6 +48,7 @@ export default function Rout() {
       views: 1.2,
       published: 11,
       link: "https://www.youtube.com/embed/MaV9VqFMzB4?si=HjypxzgK3vjfR34i",
+      subs: 37.2,
     },
     {
       id: 2,
@@ -380,7 +381,10 @@ export default function Rout() {
       />
       <Route path="/shorts" element={<Shorts />} />
       <Route path="/subscribes" element={<Subs />} />
-      <Route path="/library" element={<Lib />} />
+      <Route
+        path="/library"
+        element={<Lib history={history} setvid={setvid} />}
+      />
       <Route
         path="/history"
         element={

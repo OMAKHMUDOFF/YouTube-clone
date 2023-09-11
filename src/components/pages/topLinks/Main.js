@@ -11,7 +11,8 @@ export function Main({ videos, setvid, inHistory }) {
               className="videoCard"
               key={i}
               onClick={() => {
-                setvid(elem); inHistory(elem);
+                setvid(elem);
+                inHistory(elem);
               }}
             >
               <div className="preview">
@@ -25,9 +26,14 @@ export function Main({ videos, setvid, inHistory }) {
                   </div>
                 </div>
               </div>
-              <div className="author-views">
-                <p>{elem.author}</p>
-                <p>{elem.views}</p>
+              <div className="author-published">
+                <div className="author-views">
+                  <p>{elem.author}</p>
+                  <p>{elem.views} тыс. просмотров</p>
+                </div>
+                <div className="published">
+                  <p>• {elem.published} месяцев назад</p>
+                </div>
               </div>
             </NavLink>
           );
